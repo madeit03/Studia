@@ -1,3 +1,3 @@
 # Studia
 ProgramyNaStudia
-Programy pisane w języku C#
+Programy pisane w języku C# :)
