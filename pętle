@@ -23,7 +23,7 @@ Console.WriteLine(suma);
 }
 Console.ReadKey();
 Console.Clear();
-//3.drukuje na ekranie kwadrat. Długość boku kwadratu wczytujemy z klawiatury. Poniższy kwadrat ma bok długości 4. 
+//3.Drukuje na ekranie kwadrat. Długość boku kwadratu wczytujemy z klawiatury. Poniższy kwadrat ma bok długości 4. 
 Console.WriteLine("Podaj Dlugosc Boku Kwadratu");
 int dlugosc = Convert.ToInt32(Console.ReadLine());
 int druga = dlugosc;
