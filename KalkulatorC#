@@ -1,3 +1,11 @@
+//Napisać prosty kalkulator wykonujący podstawowe działania matematyczne.
+//+ 
+//-
+//*
+///
+//% - wyliczanie wartości procentowej
+//x2
+//√
 Console.WriteLine("Kalkulator dla dwoch liczb");
 Console.WriteLine("1.Dodawanie");
 Console.WriteLine("2.Odejmowanie");
