@@ -3,7 +3,7 @@ Console.WriteLine("1.Dodawanie");
 Console.WriteLine("2.Odejmowanie");
 Console.WriteLine("3.Mnożenie");
 Console.WriteLine("4.Dzielenie");
-Console.WriteLine("5.Modulo");
+Console.WriteLine("5.Wyliczanie wartości procentowej");
 Console.WriteLine("6.Podnoszenie do potegi (1.liczba, 2.potega)");
 Console.WriteLine("7.Pierwiastkowanie");
 Console.Write("Wybierz opcje (Wybierz od 1 do 7): ");
@@ -12,6 +12,7 @@ switch (liczba)
 {
     case 1:
         {
+            Console.WriteLine("Podaj dwie liczby");
             int liczba2 = Convert.ToInt32(Console.ReadLine());
             int liczba3 = Convert.ToInt32(Console.ReadLine());
             Console.WriteLine("Wynik Dodawania To: " + (liczba2+liczba3));
@@ -20,6 +21,7 @@ switch (liczba)
 
     case 2:
         {
+            Console.WriteLine("Podaj dwie liczby");
             int liczba2 = Convert.ToInt32(Console.ReadLine());
             int liczba3 = Convert.ToInt32(Console.ReadLine());
             Console.WriteLine("Wynik Odejmowania To: " + (liczba2-liczba3));
@@ -27,6 +29,7 @@ switch (liczba)
         break;
     case 3:
         {
+            Console.WriteLine("Podaj dwie liczby");
             int liczba2 = Convert.ToInt32(Console.ReadLine());
             int liczba3 = Convert.ToInt32(Console.ReadLine());
             Console.WriteLine("Wynik Mnożenia To: " + (liczba2 * liczba3));
@@ -34,6 +37,7 @@ switch (liczba)
         break;
     case 4:
         {
+            Console.WriteLine("Podaj dwie liczby");
             int liczba2 = Convert.ToInt32(Console.ReadLine());
             int liczba3 = Convert.ToInt32(Console.ReadLine());
             Console.WriteLine("Wynik Dzielenia To: " + (liczba2/liczba3));
@@ -41,19 +45,23 @@ switch (liczba)
         break;
     case 5:
         {
+            Console.WriteLine("Podaj dwie liczby");
             int liczba2 = Convert.ToInt32(Console.ReadLine());
             int liczba3 = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine("Wynik Z Modulo To: " +(liczba2%liczba3));
+            Console.WriteLine("Wynik Z Wyliczania Wartości Procentowej To: " + ((liczba3*100)/liczba2) +" %");
         }
         break;
     case 6:
         {
+            Console.WriteLine("Podaj dwie liczby");
             int liczba2 = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine("Wynik Z Potegowania To: "+(Math.Pow(liczba2,2)));
+            int liczba3 = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Wynik Z Potegowania To: "+(Math.Pow(liczba2,liczba3)));
         }
         break;
     case 7:
         {
+            Console.WriteLine("Podaj jedna liczbe");
             int liczba2 = Convert.ToInt32(Console.ReadLine());
             Console.WriteLine("Wynik Z Pierwiastkowania to: "+(Math.Sqrt(liczba2)));
         }
