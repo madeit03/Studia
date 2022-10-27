@@ -74,4 +74,10 @@ switch (liczba)
             Console.WriteLine("Wynik Z Pierwiastkowania to: "+(Math.Sqrt(liczba2)));
         }
         break;
+    default:
+        {
+            Console.WriteLine("Podano nieistniejaca opcje");
+        }
+        break;
+        
 }
