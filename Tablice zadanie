@@ -1,0 +1,206 @@
+//Napisać program wyświetlający tablicę dwuwymiarową o rozmiarze 6x6 oraz wypełnić ją znakami:
+//1 ćwiartka - %
+//2 ćwiartka - #
+//3 ćwiartka - *
+//4 ćwiartka - + 
+
+//Następnie dodać menu na instrukcji switch do obracanie tablicy:
+
+//obróć w prawo o 90o  
+//obróć w prawo o 180o  
+//obróć w prawo o 270o  
+//Zresetuj układ
+
+//Jako rozwiązanie przesłać sam plik o rozszerzeniu .cs
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace tablicezadanie
+{
+    internal class Program
+    {
+        string[,] array = new string[6, 6]
+            {
+                { "%","%","%","#","#","#"},
+                { "%","%","%","#","#","#"},
+                { "%","%","%","#","#","#"},
+                { "*","*","*","+","+","+"},
+                { "*","*","*","+","+","+"},
+                { "*","*","*","+","+","+"},
+
+            };
+        public void wypisanie()
+        {
+            
+            for (int i = 0; i <= 5; i++)
+            {
+                for (int j = 0; j <= 5; j++)
+                {
+                    Console.Write(array[i,j]);
+                }
+                Console.WriteLine();
+            }
+        }
+        public void obrot90()
+        {
+       for (int i=3;i<=5;i++)
+            {
+                for(int j=0;j<=2;j++)
+                {
+                    Console.Write(array[i,j]);
+                }
+                for(int m=0;m<=2;m++)
+                {
+                    Console.Write(array[i - 3, m]);
+                }
+                Console.WriteLine();
+                
+            }
+       for(int i=3;i<=5;i++)
+            {
+                for(int j=3;j<=5;j++)
+                {
+                    Console.Write(array[i, j]);
+                }
+                for(int m=3;m<=5;m++)
+                {
+                    Console.Write(array[i - 3, m]);
+                }
+                Console.WriteLine();
+            }
+        }
+        public void obrot180()
+        {
+            for(int i=3;i<=5;i++)
+            {
+                for(int j=3;j<=5;j++)
+                {
+                    Console.Write(array[i, j]);
+                }
+                for(int m=0;m<=2;m++)
+                {
+                    Console.Write(array[i,m]);
+                }
+                Console.WriteLine();
+                
+            }
+            for(int i=0;i<=2;i++)
+            {
+                for(int j=3;j<=5;j++)
+                {
+                    Console.Write(array[i,j]);
+                }
+                for(int m=0; m<=2;m++)
+                {
+                    Console.Write(array[i,m]);
+                }
+                Console.WriteLine();
+            }
+        }
+        public void obrot270()
+        {
+            for(int i=0;i<=2;i++)
+            {
+                for(int j=3;j<=5;j++)
+                {
+                    Console.Write(array[i,j]);
+                }
+                for(int m=3;m<=5;m++)
+                {
+                    Console.Write(array[i + 3, m]);
+                }
+                Console.WriteLine();
+            }
+            for(int i=0;i<=2;i++)
+            {
+                for(int j=0;j<=2;j++)
+                {
+                    Console.Write(array[i, j]);
+                }
+                for(int m=0;m<=2;m++)
+                {
+                    Console.Write(array[i + 3, m]);
+                }
+                Console.WriteLine();
+            }
+        }
+        static void Main(string[] args)
+        {
+            while (true)
+            {
+                Program obiekt = new Program();
+                obiekt.wypisanie();
+                Console.WriteLine("1.obróć w prawo o 90.");
+                Console.WriteLine("2.obróć w prawo o 180.");
+                Console.WriteLine("3.obróć w prawo o 270.");
+                Console.WriteLine("4.Resetuj uklad.");
+                Console.WriteLine("Wybierz od 1 do 4.");
+                int wybor = Convert.ToInt32(Console.ReadLine());
+                switch (wybor)
+                {
+                    case 1:
+                        {
+                            Console.Clear();
+                            Console.WriteLine("Normalny uklad.");
+                            obiekt.wypisanie();
+                            Console.WriteLine();
+                            Console.WriteLine("Obrocony uklad o 90 stopni.");
+                            obiekt.obrot90();
+                            Console.WriteLine();
+                            Console.WriteLine("Nacisnij dowolny klawisz aby kontynuwac.");
+                            Console.ReadKey();
+                            Console.Clear(); 
+                        }
+                        break;
+                    case 2:
+                        {
+
+                            Console.Clear();
+                            Console.WriteLine("Normalny uklad.");
+                            obiekt.wypisanie();
+                            Console.WriteLine();
+                            Console.WriteLine("Obrocony uklad o 180 stopni.");
+                            obiekt.obrot180();
+                            Console.WriteLine();
+                            Console.WriteLine("Nacisnij dowolny klawisz aby kontynuwac.");
+                            Console.ReadKey();
+                            Console.Clear();
+                        }
+                        break;
+                    case 3:
+                        {
+                            Console.Clear();
+                            Console.WriteLine("Normalny uklad.");
+                            obiekt.wypisanie();
+                            Console.WriteLine();
+                            Console.WriteLine("Obrocny uklad o 270 stopni.");
+                            obiekt.obrot270();
+                            Console.WriteLine();
+                            Console.WriteLine("Nacisnij dowolny klawisz aby kontynuwac.");
+                            Console.ReadKey();
+                            Console.Clear();
+
+                        }
+                        break;
+                    case 4:
+                       {
+                            Console.Clear();
+                            Console.WriteLine("Normalny uklad.");
+                            Console.WriteLine();
+                            obiekt.wypisanie();
+                            Console.WriteLine();
+                            Console.WriteLine("Nacisnij dowolny klawisz aby kontynuwac.");
+                            Console.ReadKey();
+                            Console.Clear();
+                        }
+                        break;
+                }
+                
+            }
+        }
+    }
+}
