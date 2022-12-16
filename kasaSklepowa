@@ -1,0 +1,260 @@
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
+using System.Runtime.InteropServices;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Zadanie_4___Program_prosta_kasa_sklepowa
+{
+
+    internal class Program
+    {
+
+        struct artykul
+        {
+            public string waga;
+            public string ilosc;
+
+            public void zapiszwartosci()
+            {
+                Console.WriteLine("Podaj wage");
+                string wagak = Console.ReadLine();
+                Console.WriteLine("Podaj ilosc");
+                string ilosck = Console.ReadLine();
+                waga = wagak;
+                ilosc = ilosck;
+            }
+            public void odczytajwartosci()
+            {
+                Console.WriteLine("WAGA: " + waga);
+                Console.WriteLine("ILOSC: " + ilosc);
+            }
+
+
+
+        }
+
+
+        static int wybor_art()
+        {
+            Console.WriteLine("Dzień Dobry");
+            Console.WriteLine("1.Banan");
+            Console.WriteLine("2.Arbuz");
+            Console.WriteLine("3.Jabłko");
+            int wybor = int.Parse(Console.ReadLine());
+            Console.Clear();
+            return wybor;
+        }
+        static int wyborfun()
+        {
+
+            Console.WriteLine("1.Dodac artykul");
+            Console.WriteLine("2.Koniec i paragon");
+            int wyborko = int.Parse(Console.ReadLine());
+            return wyborko;
+        }
+
+        static void Main(string[] args)
+        {
+            artykul banan = new artykul();
+            artykul arbuz = new artykul();
+            artykul jablko = new artykul();
+            bool a = false;
+            bool b = false;
+
+            int wybor = wybor_art();
+            int wyborko;
+
+
+            switch (wybor)
+            {
+                case 1:
+                    {
+                        banan.zapiszwartosci();
+                        do
+                        {
+                           wyborko = wyborfun();
+                            if (wyborko == 1)
+                            {
+                                int wybor3 = wybor_art();
+                                switch (wybor3)
+                                {
+                                    case 1:
+                                        {
+
+                                            banan.zapiszwartosci();
+
+                                        }
+                                        break;
+                                    case 2:
+                                        {
+
+                                            a = true;
+
+                                            arbuz.zapiszwartosci();
+                                        }
+                                        break;
+                                    case 3:
+                                        {
+                                            b = true;
+
+
+                                            jablko.zapiszwartosci();
+                                        }
+                                        break;
+                                }
+
+                            }
+                            if (wyborko == 2)
+                            {
+
+
+
+                                Console.Clear();
+                                Console.WriteLine("PARAGON");
+                                Console.WriteLine("Banany");
+                                banan.odczytajwartosci();
+                                if (a == true)
+                                {
+                                    Console.WriteLine("Arbuzy");
+                                    arbuz.odczytajwartosci();
+                                }
+                                if (b == true)
+                                {
+                                    Console.WriteLine("Jablka");
+                                    jablko.odczytajwartosci();
+                                }
+                            }
+
+                        } while (wyborko == 1);
+
+                    }
+                    break;
+                case 2:
+                    {
+                        arbuz.zapiszwartosci();
+                        do
+                        {
+                            wyborko = wyborfun();
+                            if (wyborko == 1)
+                            {
+                                int wybor3 = wybor_art();
+                                switch (wybor3)
+                                {
+                                    case 1:
+                                        {
+                                            a = true;
+                                            banan.zapiszwartosci();
+                                        }
+                                        break;
+                                    case 2:
+                                        {
+                                            arbuz.zapiszwartosci();
+                                        }
+                                        break;
+                                    case 3:
+                                        {
+                                            b = true;
+
+
+                                            jablko.zapiszwartosci();
+                                        }
+                                        break;
+                                }
+
+                            }
+                            if (wyborko == 2)
+                            {
+                                Console.Clear();
+                                Console.WriteLine("PARAGON");
+                                Console.WriteLine("Arbuzy");
+                                arbuz.odczytajwartosci();
+                                if (a == true)
+                                {
+                                    Console.WriteLine("Banany");
+                                    banan.odczytajwartosci();
+                                }
+                                if (b == true)
+                                {
+                                    Console.WriteLine("Jablka");
+                                    jablko.odczytajwartosci();
+                                }
+                            }
+
+                        } while (wyborko == 1);
+                    }
+                    break;
+                case 3:
+                    {
+
+                        jablko.zapiszwartosci();
+
+
+
+
+                        do
+                        {
+
+                            wyborko = wyborfun();
+                            if (wyborko == 1)
+                            {
+                                int wybor3 = wybor_art();
+                                switch (wybor3)
+                                {
+                                    case 1:
+                                        {
+                                            a = true;
+
+                                            banan.zapiszwartosci();
+
+                                        }
+                                        break;
+                                    case 2:
+                                        {
+
+                                            b = true;
+
+                                            arbuz.zapiszwartosci();
+                                        }
+                                        break;
+                                    case 3:
+                                        {
+
+
+
+                                            jablko.zapiszwartosci();
+                                        }
+                                        break;
+                                }
+
+                            }
+                            if (wyborko == 2)
+                            {
+                                Console.Clear();
+                                Console.WriteLine("PARAGON");
+                                Console.WriteLine("Jablka");
+                                jablko.odczytajwartosci();
+                                if (a == true)
+                                {
+                                    Console.WriteLine("Banany");
+                                    banan.odczytajwartosci();
+                                }
+                                if (b == true)
+                                {
+                                    Console.WriteLine("Arbuzy");
+                                    arbuz.odczytajwartosci();
+                                }
+                            }
+
+                        } while (wyborko == 1);
+
+                    }
+                    break;
+            }
+            Console.ReadLine();
+        }
+
+    }
+}
