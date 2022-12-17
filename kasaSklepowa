@@ -14,35 +14,148 @@ namespace Zadanie_4___Program_prosta_kasa_sklepowa
 
         struct artykul
         {
-            public string waga;
-            public string ilosc;
+            public int waga;
+            public int ilosc;
+            
 
             public void zapiszwartosci()
             {
-                Console.WriteLine("Podaj wage");
-                string wagak = Console.ReadLine();
-                Console.WriteLine("Podaj ilosc");
-                string ilosck = Console.ReadLine();
-                waga = wagak;
-                ilosc = ilosck;
+                
+                Console.WriteLine("Wybierz:");
+                Console.WriteLine("1.Podaj wage"); 
+                Console.WriteLine("2.Podaj ilosc");
+                int wyborstart = int.Parse(Console.ReadLine());
+                Console.Clear();
+                if(wyborstart==1)
+                {
+                    Console.Write("Podaj wage: ");
+                     int wagak = int.Parse(Console.ReadLine());
+                    waga = wagak;
+                    
+                }
+                else if(wyborstart==2)
+                {
+                    Console.Write("Podaj ilosc: ");
+                     int ilosck = int.Parse(Console.ReadLine());
+                     ilosc = ilosck;
+                    
+                }
+                else
+                {
+                    Console.WriteLine("Zla opcja");
+                }
+                
+
+                
+               
             }
-            public void odczytajwartosci()
+            public  double odczytajwartosci(string val)
             {
-                Console.WriteLine("WAGA: " + waga);
-                Console.WriteLine("ILOSC: " + ilosc);
+                if (val == "banan")
+                {
+                    //banan za 0.75 zl ilosc
+                    //banan za 1zl waga
+                    double koszta1;
+                    double koszta2;
+                    koszta1 = ilosc*0.75;
+                    koszta2 = waga * 1;
+                    Console.WriteLine("ilosc bananow: "+ ilosc +". Koszta za ilosc: "+koszta1+"zl");
+                    Console.WriteLine("waga bananow: " + waga + "kg. Koszta za wage: "+koszta2+"zl");
+                    if (koszta1 == 0)
+                    {
+                        Console.WriteLine("Koszta: " + koszta2 + " zl");
+                        return koszta2;
+                    }
+                    if(koszta2 == 0)
+                    {
+                        Console.WriteLine("Koszta: " + koszta1 + " zl");
+                        return koszta1;
+                    }
+                    else
+                    {
+                        double calk =koszta1 + koszta2;
+                        Console.WriteLine("Koszta: " + calk + " zl");
+                        return calk;
+                    }
+                    
+
+                    
+
+                }
+                if(val=="arbuz")
+                {
+                    //arbuz za 3 zl za ilosc
+                    //arbuz za 5 zl waga
+
+                    double koszta1;
+                    double koszta2;
+                    koszta1 = ilosc * 3;
+                    koszta2 = waga * 5;
+                    Console.WriteLine("ilosc arbuzow: " + ilosc + ". Koszta za ilosc: " + koszta1 + "zl");
+                    Console.WriteLine("waga arbuzow: " + waga + "kg. Koszta za wage: " + koszta2 + "zl");
+                    if (koszta1 == 0)
+                    {
+                        Console.WriteLine("Koszta: " + koszta2 + " zl");
+                        return koszta2;
+                    }
+                    if (koszta2 == 0)
+                    {
+                        Console.WriteLine("Koszta: " + koszta1 + " zl");
+                        return koszta1;
+                    }
+                    else
+                    {
+                        double calk = koszta1 + koszta2;
+                        Console.WriteLine("Koszta: " + calk + " zl");
+                    }
+                }
+                if(val=="jablko")
+                {
+                    //jablko za 2 zl ilosc
+                    //jablko za 10 zl waga
+                    double koszta1;
+                    double koszta2;
+                    koszta1 = ilosc * 2;
+                    koszta2 = waga * 10;
+                    Console.WriteLine("ilosc jablek: " + ilosc + ". Koszta za ilosc: " + koszta1 + "zl");
+                    Console.WriteLine("waga jablek: " + waga + "kg. Koszta za wage: " + koszta2 + "zl");
+                    if (koszta1 == 0)
+                    {
+                        Console.WriteLine("Koszta: " + koszta2 + " zl");
+                        return koszta2;
+                    }
+                    if (koszta2 == 0)
+                    {
+                        Console.WriteLine("Koszta: " + koszta1 + " zl");
+                        return koszta1;
+                    }
+                    else
+                    {
+                        double calk = koszta1 + koszta2;
+                        Console.WriteLine("Koszta: " + calk + " zl");
+                        return calk;
+                    }
+                }
+                return 0;
             }
 
 
 
         }
-
+        //banan za 0.75 zl ilosc
+        //banan za 1zl waga
+        //arbuz za 3 zl za ilosc
+        //arbuz za 5 zl waga
+        //jablko za 2 zl ilosc
+        //jablko za 10 zl waga
 
         static int wybor_art()
         {
             Console.WriteLine("Dzień Dobry");
-            Console.WriteLine("1.Banan");
-            Console.WriteLine("2.Arbuz");
-            Console.WriteLine("3.Jabłko");
+            Console.WriteLine("Wybierz:");
+            Console.WriteLine("1.Banan |1 banan=0.75zl/szt 1kg = 1zl");
+            Console.WriteLine("2.Arbuz |1 arbuz=3zl/szt 1kg = 5zl");
+            Console.WriteLine("3.Jabłko |1 jalbko =2zl/szt 1kg = 10zl");
             int wybor = int.Parse(Console.ReadLine());
             Console.Clear();
             return wybor;
@@ -53,6 +166,7 @@ namespace Zadanie_4___Program_prosta_kasa_sklepowa
             Console.WriteLine("1.Dodac artykul");
             Console.WriteLine("2.Koniec i paragon");
             int wyborko = int.Parse(Console.ReadLine());
+            Console.Clear();
             return wyborko;
         }
 
@@ -61,6 +175,9 @@ namespace Zadanie_4___Program_prosta_kasa_sklepowa
             artykul banan = new artykul();
             artykul arbuz = new artykul();
             artykul jablko = new artykul();
+            double koniec;
+            double koniec1;
+            double koniec2;
             bool a = false;
             bool b = false;
 
@@ -114,18 +231,24 @@ namespace Zadanie_4___Program_prosta_kasa_sklepowa
 
                                 Console.Clear();
                                 Console.WriteLine("PARAGON");
-                                Console.WriteLine("Banany");
-                                banan.odczytajwartosci();
+                                Console.WriteLine("Banany:");
+                                 koniec =banan.odczytajwartosci("banan");
                                 if (a == true)
                                 {
-                                    Console.WriteLine("Arbuzy");
-                                    arbuz.odczytajwartosci();
+                                    Console.WriteLine("Arbuzy:");
+                                    koniec1= arbuz.odczytajwartosci("arbuz");
+                                    koniec += koniec1; 
                                 }
                                 if (b == true)
                                 {
-                                    Console.WriteLine("Jablka");
-                                    jablko.odczytajwartosci();
+                                    Console.WriteLine("Jablka:");
+                                   koniec2 =jablko.odczytajwartosci("jablko");
+                                    koniec += koniec2;
                                 }
+                               
+
+
+                                Console.WriteLine("LACZNIE: "+koniec);
                             }
 
                         } while (wyborko == 1);
@@ -169,18 +292,21 @@ namespace Zadanie_4___Program_prosta_kasa_sklepowa
                             {
                                 Console.Clear();
                                 Console.WriteLine("PARAGON");
-                                Console.WriteLine("Arbuzy");
-                                arbuz.odczytajwartosci();
+                                Console.WriteLine("Arbuzy:");
+                                koniec = arbuz.odczytajwartosci("arbuz");
                                 if (a == true)
                                 {
-                                    Console.WriteLine("Banany");
-                                    banan.odczytajwartosci();
+                                    Console.WriteLine("Banany:");
+                                    koniec1 = banan.odczytajwartosci("banan");
+                                    koniec += koniec1;
                                 }
                                 if (b == true)
                                 {
-                                    Console.WriteLine("Jablka");
-                                    jablko.odczytajwartosci();
+                                    Console.WriteLine("Jablka:");
+                                    koniec2 = jablko.odczytajwartosci("jablko");
+                                    koniec = +koniec2;
                                 }
+                                Console.WriteLine("LACZNIE: " + koniec);
                             }
 
                         } while (wyborko == 1);
@@ -234,18 +360,21 @@ namespace Zadanie_4___Program_prosta_kasa_sklepowa
                             {
                                 Console.Clear();
                                 Console.WriteLine("PARAGON");
-                                Console.WriteLine("Jablka");
-                                jablko.odczytajwartosci();
+                                Console.WriteLine("Jablka:");
+                                koniec = jablko.odczytajwartosci("jablko");
                                 if (a == true)
                                 {
-                                    Console.WriteLine("Banany");
-                                    banan.odczytajwartosci();
+                                    Console.WriteLine("Banany:");
+                                    koniec1 = banan.odczytajwartosci("banan");
+                                    koniec += koniec1;
                                 }
                                 if (b == true)
                                 {
-                                    Console.WriteLine("Arbuzy");
-                                    arbuz.odczytajwartosci();
+                                    Console.WriteLine("Arbuzy:");
+                                    koniec2 = arbuz.odczytajwartosci("arbuz");
+                                    koniec += koniec2;
                                 }
+                                Console.WriteLine("LACZNIE: " + koniec);
                             }
 
                         } while (wyborko == 1);
