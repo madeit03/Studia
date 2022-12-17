@@ -1,0 +1,62 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp2
+{
+    internal class Program
+    {
+        static void sprawdz(int x ,int n)
+        {
+
+            if (x == 1)
+            {
+                Console.WriteLine("tak");
+            }
+            if (x == 2)
+            {
+                Console.WriteLine("tak");
+            }
+            else
+            if (n > 1)
+            {
+                {
+                    int cos = x % n;
+                    if (cos != 0)
+                    {
+                        if (n == 2)
+                        {
+                            Console.WriteLine("tak");
+                        }
+                        sprawdz(x, n - 1);
+
+                    }
+                    if (cos == 0)
+                    {
+                        Console.WriteLine("nie");
+                    }
+
+                }
+            }
+
+        }
+           
+            
+        
+        static void Main(string[] args)
+        {
+            while (true)
+            {
+                
+                Console.Write("Podaj liczbe: ");
+                int liczba = int.Parse(Console.ReadLine());
+                int druga = liczba - 1;
+                sprawdz(liczba, druga);
+                Console.ReadKey();
+                Console.Clear();
+            }
+        }
+    }
+}
